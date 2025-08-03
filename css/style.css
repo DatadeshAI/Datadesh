@@ -6,6 +6,10 @@
     --dark: #14183E;
 }
 
+.img-set{
+    margin-bottom: 25px;
+    width: 580px;
+}
 
 /*** Spinner ***/
 #spinner {
@@ -589,4 +593,17 @@ h6,
     padding-right: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+}
+
+
+@media (max-width: 576px) {
+    .navbar .navbar-brand img {
+        height: 50px !important;
+        width: 50px !important;
+        margin-right: 8px !important;
+    }
+    .navbar {
+        height: 56px !important;
+        padding: 6px 0 !important;
+    }
 }
