@@ -128,35 +128,40 @@
                 <div class="col-lg-7">
                     <p class="text-center mb-4">Whether you have a specific project in mind or you're just beginning to explore the potential of AI for your business, our team is ready to help. Fill out the form below, and we'll get back to you shortly.</p>
                     <div class="wow fadeIn" data-wow-delay="0.3s">
-                        <form>
+                        <form action="https://formsubmit.co/datadeshai@gmail.com" method="POST">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
                                         <label for="subject">Subject</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 150px" required></textarea>
                                         <label for="message">Message</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
                                 </div>
+                                </div>
+                             <!-- Optional: Redirect to a thank you page after submission -->
+                            <input type="hidden" name="_next" value="/thank-you.html">
+                            <!-- Optional: Disable the reCAPTCHA -->
+                            <input type="hidden" name="_captcha" value="false">
                             </div>
                         </form>
                     </div>
@@ -192,7 +197,7 @@
                 <div class="col-12 wow fadeIn" data-wow-delay="0.7s">
                     <div class="ratio ratio-16x9">
                         <iframe class="position-relative rounded"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238132.2831518342!2d78.9324395135118!3d21.16113943235654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0a5a31faf13%3A0x19b37d06d0bb3e2b!2sNagpur%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1722370068301!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.355867021358!2d73.8567432!3d18.5204303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c0664872a0eb%3A0x5d60a32c0f8619f7!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1722681432101!5m2!1sen!2sin"
                             frameborder="0" style="min-height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
                             tabindex="0"></iframe>
                     </div>
@@ -211,6 +216,7 @@
                     <a href="index.html" class="navbar-brand">
                         <img src="img/Datadesh logo 3.png" alt="Datadesh Logo" style="height:130px; width:160px;">
                     </a>
+                     <p class="mb-0">Bharat's Brain, Global Vision — Powered by Data</p>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
                     <h5 class="text-white mb-4">Get In Touch</h5>

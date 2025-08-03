@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataDesh - Bharat's Brain, Global Vision — Powered by Data</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .font-ubuntu {
+            font-family: 'Ubuntu', sans-serif;
+        }
+        .hero-bg {
+            background-color: #14183E; /* A color similar to the original primary */
+        }
+        .primary-color {
+            color: #3B82F6; /* Tailwind's blue-500 as a primary color */
+        }
+        .primary-bg {
+            background-color: #3B82F6;
+        }
+        .feature-bg {
+             background-color: #14183E;
+        }
+        .case-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(20, 24, 62, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .case-item:hover .case-overlay {
+            opacity: 1;
+        }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="bg-white text-gray-700">
+
+    <!-- Spinner Start (Optional - for visual parity) -->
+    <div id="spinner" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+        <div class="animate-ping h-12 w-12 rounded-full primary-bg"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <div class="w-full sticky top-0 z-40 bg-white shadow-md" x-data="{ open: false, dropdown: false }">
+        <nav class="container mx-auto px-4 lg:px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center">
+                    <img src="img/Datadesh logo 3.png" alt="Datadesh Logo" style="height:200px; width:260px; width:auto;">
+                </a>
+                <button @click="open = !open" type="button" class="lg:hidden text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="px-3 py-2 text-blue-600 font-semibold">Home</a>
+                    <a href="about.html" class="px-3 py-2 text-gray-600 hover:text-blue-600">About</a>
+                    <a href="service.html" class="px-3 py-2 text-gray-600 hover:text-blue-600">Services</a>
+                    <a href="project.html" class="px-3 py-2 text-gray-600 hover:text-blue-600">Projects</a>
+                    <div class="relative" @click.away="dropdown = false">
+                        <button @click="dropdown = !dropdown" class="px-3 py-2 text-gray-600 hover:text-blue-600 flex items-center">
+                            Pages <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </button>
+                        <div x-show="dropdown" x-cloak class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                            <a href="feature.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Features</a>
+                            <a href="team.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Our Team</a>
+                            <a href="faq.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">FAQs</a>
+                            <a href="testimonial.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Testimonial</a>
+                            <a href="404.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">404 Page</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="px-3 py-2 text-gray-600 hover:text-blue-600">Contact</a>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div x-show="open" x-cloak class="lg:hidden mt-4">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 rounded hover:bg-gray-100 font-semibold">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 rounded hover:bg-gray-100">About</a>
+                <a href="service.html" class="block px-3 py-2 text-gray-700 rounded hover:bg-gray-100">Services</a>
+                <a href="project.html" class="block px-3 py-2 text-gray-700 rounded hover:bg-gray-100">Projects</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700 rounded hover:bg-gray-100">Contact</a>
+                 <div class="border-t border-gray-200 mt-2 pt-2">
+                    <a href="feature.html" class="block px-3 py-2 text-gray-700 rounded hover:bg-gray-100">Features</a>
+                    <a href="team.html" class="block px-3 py-2 text-gray-700 rounded hover:bg-gray-100">Our Team</a>
+                    <a href="faq.html" class="block px-3 py-2 text-gray-700 rounded hover:bg-gray-100">FAQs</a>
+                    <a href="testimonial.html" class="block px-3 py-2 text-gray-700 rounded hover:bg-gray-100">Testimonial</a>
+                    <a href="404.html" class="block px-3 py-2 text-gray-700 rounded hover:bg-gray-100">404 Page</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="w-full pt-12 hero-bg mb-12">
+        <div class="container mx-auto px-4 lg:px-6 pt-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-12">
+                <div class="self-center text-center lg:text-left mb-12 lg:mb-0">
+                    <div class="inline-block border border-gray-400 rounded-full text-white px-3 py-1 text-sm mb-3">AI.Datadesh</div>
+                    <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">Transforming India's Future with Data Intelligence.</h1>
+                    <p class="text-white mb-6">We build custom software, intelligent automations, and BI dashboards that empower organizations to harness the true power of their data.</p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#" class="w-full sm:w-auto bg-white text-gray-900 py-3 px-6 rounded-full font-semibold">Read More</a>
+                        <a href="#" class="w-full sm:w-auto border border-white text-white py-3 px-6 rounded-full font-semibold">Contact Us</a>
+                    </div>
+                </div>
+                <div class="self-end text-center lg:text-right">
+                    <img class="inline-block max-w-full h-auto" src="https://placehold.co/500x400/14183E/FFFFFF?text=Hero+Image" alt="Hero Image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <!-- About Start -->
+    <div class="container mx-auto py-12 px-4 lg:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div>
+                <img class="w-full h-auto rounded-lg shadow-lg" src="https://placehold.co/600x450/E5E7EB/374151?text=About+Us" alt="About us image">
+            </div>
+            <div>
+                <div class="inline-block border border-blue-500 rounded-full primary-color px-3 py-1 text-sm mb-3">About Us</div>
+                <h1 class="text-3xl lg:text-4xl font-bold mb-4">We Make Your Business Smarter with Artificial Intelligence</h1>
+                <p class="mb-4">At Datadesh, we go beyond one-size-fits-all solutions. We architect and develop bespoke software tailored to your unique operational needs, create intelligent automations and AI agents that streamline your workflows, and design dynamic Power BI dashboards that transform raw numbers into actionable insights.</p>
+                <p class="mb-4">Our integrated approach ensures that every piece of technology we build is a step towards empowering your organization to unlock and harness the true, transformative power of your data.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <h6 class="font-semibold flex items-center"><i class="fa fa-check primary-color mr-2"></i>Award Winning</h6>
+                    <h6 class="font-semibold flex items-center"><i class="fa fa-check primary-color mr-2"></i>Professional Staff</h6>
+                    <h6 class="font-semibold flex items-center"><i class="fa fa-check primary-color mr-2"></i>24/7 Support</h6>
+                    <h6 class="font-semibold flex items-center"><i class="fa fa-check primary-color mr-2"></i>Fair Prices</h6>
+                </div>
+                <div class="flex items-center mt-6">
+                    <a class="primary-bg text-white rounded-full px-5 py-2.5 mr-3" href="#">Read More</a>
+                    <a class="border border-blue-500 w-10 h-10 flex items-center justify-center rounded-full primary-color mr-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="border border-blue-500 w-10 h-10 flex items-center justify-center rounded-full primary-color mr-3" href="https://x.com/DatadeshAI"><i class="fab fa-twitter"></i></a>
+                    <a class="border border-blue-500 w-10 h-10 flex items-center justify-center rounded-full primary-color mr-3" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="border border-blue-500 w-10 h-10 flex items-center justify-center rounded-full primary-color" href="https://www.linkedin.com/company/datadesh/?viewAsMember=true"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Service Start -->
+    <div class="bg-gray-100 mt-12 py-12">
+        <div class="container mx-auto py-12 px-4 lg:px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="inline-block border border-blue-500 rounded-full primary-color px-3 py-1 text-sm mb-3">Our Services</div>
+                    <h1 class="text-3xl lg:text-4xl font-bold mb-4">Our Excellent AI Solutions for Your Business</h1>
+                    <p class="mb-4">At Datadesh, we offer a comprehensive suite of AI and data intelligence services. Each service is built on our foundational principles of being scalable, ethical, and impactful, ensuring you not only adopt cutting-edge technology but do so responsibly and effectively</p>
+                    <a class="primary-bg text-white rounded-full px-5 py-2.5" href="#">Read More</a>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Service Item 1 -->
+                    <div class="bg-white p-6 rounded-lg text-center shadow-md flex flex-col">
+                        <div class="mx-auto w-16 h-16 flex items-center justify-center rounded-full primary-bg text-white mb-4">
+                            <i class="fa fa-robot fa-2x"></i>
+                        </div>
+                        <h5 class="font-bold text-lg mb-3">Custom Software Solutions</h5>
+                        <p class="text-sm flex-grow">Off-the-shelf software doesn't always fit. We build powerful, scalable, and secure applications from the ground up...</p>
+                        <a class="primary-color font-semibold mt-4" href="#">Read More</a>
+                    </div>
+                     <!-- Service Item 2 -->
+                    <div class="bg-white p-6 rounded-lg text-center shadow-md flex flex-col">
+                        <div class="mx-auto w-16 h-16 flex items-center justify-center rounded-full primary-bg text-white mb-4">
+                            <i class="fa fa-power-off fa-2x"></i>
+                        </div>
+                        <h5 class="font-bold text-lg mb-3">Intelligent Chrome Extensions</h5>
+                        <p class="text-sm flex-grow">Boost your team's efficiency where they work the most—the browser. We create smart Chrome extensions...</p>
+                        <a class="primary-color font-semibold mt-4" href="#">Read More</a>
+                    </div>
+                     <!-- Service Item 3 -->
+                    <div class="bg-white p-6 rounded-lg text-center shadow-md flex flex-col">
+                        <div class="mx-auto w-16 h-16 flex items-center justify-center rounded-full primary-bg text-white mb-4">
+                            <i class="fa fa-graduation-cap fa-2x"></i>
+                        </div>
+                        <h5 class="font-bold text-lg mb-3">Advanced Generative AI & AI Agents</h5>
+                        <p class="text-sm flex-grow">Step into the future of automation. We harness the power of advanced generative AI models and build intelligent agents...</p>
+                        <a class="primary-color font-semibold mt-4" href="#">Read More</a>
+                    </div>
+                     <!-- Service Item 4 -->
+                    <div class="bg-white p-6 rounded-lg text-center shadow-md flex flex-col">
+                        <div class="mx-auto w-16 h-16 flex items-center justify-center rounded-full primary-bg text-white mb-4">
+                            <i class="fa fa-brain fa-2x"></i>
+                        </div>
+                        <h5 class="font-bold text-lg mb-3">Power BI Dashboards</h5>
+                        <p class="text-sm flex-grow">Stop guessing and start knowing. We transform your raw business data into clear, interactive, and insightful Power BI dashboards...</p>
+                        <a class="primary-color font-semibold mt-4" href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Case Start -->
+    <div class="bg-gray-100 py-12">
+        <div class="container mx-auto py-12 px-4 lg:px-6">
+            <div class="text-center mx-auto max-w-lg">
+                <div class="inline-block border border-blue-500 rounded-full primary-color px-3 py-1 text-sm mb-3">Case Study</div>
+                <h1 class="text-3xl lg:text-4xl font-bold mb-8">Explore Our Recent AI Case Studies</h1>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Case Item 1 -->
+                <div class="case-item relative overflow-hidden rounded-lg group">
+                    <img class="w-full h-auto" src="https://placehold.co/400x300/CCCCCC/FFFFFF?text=Case+Study+1" alt="Case Study 1">
+                    <a class="case-overlay flex flex-col justify-end p-6 text-white text-decoration-none" href="casestudy1.html">
+                        <small>Robotic Automation</small>
+                        <h5 class="text-lg font-bold leading-snug mb-3">From Bias to Banking the Unbanked: An Ethical AI Success Story</h5>
+                        <span class="w-12 h-12 flex items-center justify-center rounded-full primary-bg text-white"><i class="fa fa-arrow-right"></i></span>
+                    </a>
+                </div>
+                <!-- Case Item 2 -->
+                <div class="case-item relative overflow-hidden rounded-lg group">
+                    <img class="w-full h-auto" src="https://placehold.co/400x300/CCCCCC/FFFFFF?text=Case+Study+2" alt="Case Study 2">
+                    <a class="case-overlay flex flex-col justify-end p-6 text-white text-decoration-none" href="casestudy2.html">
+                        <small>Machine learning</small>
+                        <h5 class="text-lg font-bold leading-snug mb-3">From Reactive to Predictive: Revolutionizing a National Retail Supply Chain</h5>
+                        <span class="w-12 h-12 flex items-center justify-center rounded-full primary-bg text-white"><i class="fa fa-arrow-right"></i></span>
+                    </a>
+                </div>
+                <!-- Case Item 3 -->
+                <div class="case-item relative overflow-hidden rounded-lg group">
+                    <img class="w-full h-auto" src="https://placehold.co/400x300/CCCCCC/FFFFFF?text=Case+Study+3" alt="Case Study 3">
+                    <a class="case-overlay flex flex-col justify-end p-6 text-white text-decoration-none" href="casestudy3.html">
+                        <small>Predictive Analysis</small>
+                        <h5 class="text-lg font-bold leading-snug mb-3">Powering 'Make in India' with Zero-Defect Manufacturing</h5>
+                        <span class="w-12 h-12 flex items-center justify-center rounded-full primary-bg text-white"><i class="fa fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Case End -->
+
+    <!-- FAQs Start -->
+    <div class="container mx-auto py-12 px-4 lg:px-6" x-data="{ open: 'collapseOne' }">
+        <div class="text-center mx-auto max-w-lg">
+            <div class="inline-block border border-blue-500 rounded-full primary-color px-3 py-1 text-sm mb-3">Popular FAQs</div>
+            <h1 class="text-3xl lg:text-4xl font-bold mb-8">Frequently Asked Questions</h1>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="border rounded-lg">
+                    <h2 id="headingOne">
+                        <button @click="open = (open === 'collapseOne' ? '' : 'collapseOne')" class="w-full text-left p-4 font-semibold flex justify-between items-center" type="button">
+                            What exactly does Datadesh do?
+                            <i class="fa" :class="open === 'collapseOne' ? 'fa-minus' : 'fa-plus'"></i>
+                        </button>
+                    </h2>
+                    <div x-show="open === 'collapseOne'" class="p-4 border-t">
+                        Datadesh is a specialized AI and data intelligence partner. We design and build custom machine learning solutions that solve real-world business challenges...
+                    </div>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="border rounded-lg">
+                    <h2 id="headingTwo">
+                        <button @click="open = (open === 'collapseTwo' ? '' : 'collapseTwo')" class="w-full text-left p-4 font-semibold flex justify-between items-center" type="button">
+                            What makes you different from other AI startups?
+                            <i class="fa" :class="open === 'collapseTwo' ? 'fa-minus' : 'fa-plus'"></i>
+                        </button>
+                    </h2>
+                    <div x-show="open === 'collapseTwo'" class="p-4 border-t">
+                        Our difference lies in our four core principles: India-Centric Expertise, Ethical by Design, Focus on Impact, and True Partnership...
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-4">
+                 <!-- FAQ 3 -->
+                <div class="border rounded-lg">
+                    <h2 id="headingThree">
+                        <button @click="open = (open === 'collapseThree' ? '' : 'collapseThree')" class="w-full text-left p-4 font-semibold flex justify-between items-center" type="button">
+                            How do you ensure data security?
+                             <i class="fa" :class="open === 'collapseThree' ? 'fa-minus' : 'fa-plus'"></i>
+                        </button>
+                    </h2>
+                    <div x-show="open === 'collapseThree'" class="p-4 border-t">
+                       Data security is paramount and non-negotiable. We operate with strict protocols fully compliant with India's Digital Personal Data Protection Act (DPDPA), 2023...
+                    </div>
+                </div>
+                 <!-- FAQ 4 -->
+                <div class="border rounded-lg">
+                    <h2 id="headingFour">
+                        <button @click="open = (open === 'collapseFour' ? '' : 'collapseFour')" class="w-full text-left p-4 font-semibold flex justify-between items-center" type="button">
+                            What is the process for starting a project?
+                             <i class="fa" :class="open === 'collapseFour' ? 'fa-minus' : 'fa-plus'"></i>
+                        </button>
+                    </h2>
+                    <div x-show="open === 'collapseFour'" class="p-4 border-t">
+                       We make it simple and transparent. Our process typically follows four steps: Discovery & Strategy Call, Solution Proposal, Agile Development, Deployment & Impact Tracking.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FAQs End -->
+
+    <!-- Footer Start -->
+    <div class="bg-gray-900 text-gray-400 footer pt-12">
+        <div class="container mx-auto py-12 px-4 lg:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <a href="index.html">
+                         <img src="https://placehold.co/160x60/111827/FFFFFF?text=Datadesh" alt="Datadesh Logo">
+                    </a>
+                    <p class="mt-4">Bharat's Brain, Global Vision — Powered by Data.</p>
+                </div>
+                <div>
+                    <h5 class="text-white font-semibold mb-4">Get In Touch</h5>
+                    <p class="flex items-start mb-2"><i class="fa fa-map-marker-alt mr-3 mt-1"></i>Pune, Maharashtra, India</p>
+                    <p class="flex items-start mb-2"><i class="fa fa-phone-alt mr-3 mt-1"></i>+012 345 67890</p>
+                    <p class="flex items-start mb-2"><i class="fa fa-envelope mr-3 mt-1"></i>datadeshai@gmail.com</p>
+                    <div class="flex pt-2 space-x-2">
+                        <a class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-500 hover:bg-blue-500 hover:border-blue-500" href="https://x.com/DatadeshAI"><i class="fab fa-twitter"></i></a>
+                        <a class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-500 hover:bg-blue-500 hover:border-blue-500" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-500 hover:bg-blue-500 hover:border-blue-500" href="https://www.linkedin.com/company/datadesh/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="text-white font-semibold mb-4">Popular Link</h5>
+                    <a class="block mb-2 hover:text-white" href="about.html">About Us</a>
+                    <a class="block mb-2 hover:text-white" href="contact.html">Contact Us</a>
+                    <a class="block mb-2 hover:text-white" href="#">Privacy Policy</a>
+                    <a class="block mb-2 hover:text-white" href="#">Terms & Condition</a>
+                </div>
+                <div>
+                    <h5 class="text-white font-semibold mb-4">Our Services</h5>
+                    <a class="block mb-2 hover:text-white" href="#">Robotic Automation</a>
+                    <a class="block mb-2 hover:text-white" href="#">Machine learning</a>
+                    <a class="block mb-2 hover:text-white" href="#">Predictive Analysis</a>
+                    <a class="block mb-2 hover:text-white" href="#">Data Science</a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="border-t border-gray-700 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                    <div class="mb-3 md:mb-0">
+                        &copy; <a class="border-b border-gray-500 hover:text-white" href="#">Datadesh</a>, All Right Reserved.
+                    </div>
+                    <div>
+                        Designed By <a class="border-b border-gray-500 hover:text-white" href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="fixed bottom-5 right-5 w-12 h-12 primary-bg text-white rounded-full flex items-center justify-center shadow-lg hover:bg-blue-600 z-50">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Simple script to hide spinner after page load
+        window.addEventListener('load', function () {
+            const spinner = document.getElementById('spinner');
+            if (spinner) {
+                spinner.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>
