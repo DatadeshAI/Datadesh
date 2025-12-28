@@ -488,6 +488,55 @@ h6,
 }
 
 
+/*** Blog Carousel ***/
+.blog-carousel {
+    padding: 0 30px;
+}
+
+.blog-carousel .owl-nav {
+    position: absolute;
+    width: 100%;
+    height: 45px;
+    top: calc(50% - 22.5px);
+    left: 0;
+    padding: 0 5px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.blog-carousel .owl-nav .owl-prev,
+.blog-carousel .owl-nav .owl-next {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    background: #FFFFFF;
+    border: 1px solid var(--primary);
+    border-radius: 45px;
+    font-size: 22px;
+    transition: .5s;
+    pointer-events: auto;
+}
+
+.blog-carousel .owl-nav .owl-prev:hover,
+.blog-carousel .owl-nav .owl-next:hover {
+    background: var(--primary);
+    color: #FFFFFF;
+}
+
+.blog-carousel .blog-item {
+    margin: 15px 0;
+    transition: .5s;
+}
+
+.blog-carousel .blog-item:hover {
+    transform: translateY(-5px);
+}
+
+
 /*** Team ***/
 .team-item {
     transition: .5s;
