@@ -152,10 +152,6 @@ h6,
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.navbar .navbar-brand img {
-    /* If logo needs to be visible on white, adjust as needed */
-}
-
 .navbar .navbar-nav .nav-link,
 .navbar .navbar-nav .nav-link.active,
 .navbar .navbar-nav .nav-link:focus,
@@ -579,6 +575,30 @@ h6,
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+/*** Footer Legal Links ***/
+.footer .footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.footer .footer-legal a {
+    color: rgba(255, 255, 255, .5);
+    margin: 5px 10px;
+    text-decoration: none;
+    transition: .3s;
+    font-size: 14px;
+}
+
+.footer .footer-legal a:hover {
+    color: #FFFFFF;
+}
+
+.footer .footer-legal .separator {
+    color: rgba(256, 256, 256, .2);
 }
 
 /* Remove side gaps from navbar */
